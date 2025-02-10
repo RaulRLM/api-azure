@@ -59,11 +59,7 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_75E5BB46A49A4388887B097162D636CB }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_118E594E7BE04DFB9A5D49836F298048 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_6FD3FD44F9C242D9A7C0E4B6CDDDAB3A }}
-          client-secret: ${{ secrets.AZUREAPPSERVICE_CLIENTSECRET }}  # Afegeix aquest secret
-          bscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_1A635F9813DB49B38991A74AF113D846 }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
