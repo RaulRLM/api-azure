@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - ApiPlantes09
+name: Build and deploy Node.js app to Azure Web App - apiplantes09
 
 on:
   push:
@@ -60,13 +60,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_0B8D1897CAD04164A53590B18035DF08 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_6A6731C70DEE4800B7F005A339007348 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_CD5915226E224A8883FFF74A5726497C }}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'ApiPlantes09'
+          app-name: 'apiplantes09'
           slot-name: 'Production'
           package: .
           
